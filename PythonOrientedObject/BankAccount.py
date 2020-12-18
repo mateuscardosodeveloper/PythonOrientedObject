@@ -1,3 +1,6 @@
+"""
+dont forget import module in terminal python exemple - from BankAccount import Conta
+"""
 class Conta:  #class reponsible for project Oriented Object
      #__init__related for construction allocate a data in memory
      #self search value referring in memory
@@ -10,7 +13,7 @@ class Conta:  #class reponsible for project Oriented Object
 
     #extrato rellated with method
     def extrato(self):
-        print("O titular é {} com {}".format(self.__titular, self.__saldo))
+        print("O titular é {} com R${} saldo na conta.".format(self.__titular, self.__saldo))
 
     def deposita(self, valor):
         self.__saldo += valor
@@ -32,7 +35,7 @@ class Conta:  #class reponsible for project Oriented Object
         destino.deposito(valor)
 
     @property #get value filled inside attribute
-    def titular(self):
+    def titular(self):#not need parentheses () in terminal to call
         return self.__titular
 
     @property
@@ -43,8 +46,8 @@ class Conta:  #class reponsible for project Oriented Object
     def limite(self):
         return self.__limite
 
-    @limite.setter #alter value inside of attribute
-    def limite(self, limite):
+    @limite.setter #alter value inside of attribute, need of date @property work together
+    def limite(self, limite):# to change value in terminal receive signal equal '='
         self.__limite = limite
     
     @staticmethod #not need one object to be called, only the class
@@ -54,3 +57,4 @@ class Conta:  #class reponsible for project Oriented Object
     @staticmethod
     def codigos_bancos():
         return {'BB': '001', 'Caixa': '104', 'Bradesco': '237'}
+

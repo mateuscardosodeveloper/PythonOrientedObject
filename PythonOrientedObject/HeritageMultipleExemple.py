@@ -26,7 +26,7 @@ class Alura(Funcionario):
 
 class Arroba: #exemple that Mixin, not need to be Estanciado.
     def __str__(self):#Mixin can be called in any class, without needing any requirements
-        return f'@ {self.nome}'
+        return f'@ {self.nome}'# this are work if not must 'format' before
 
 class Junior(Alura):
     pass

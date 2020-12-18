@@ -1,3 +1,7 @@
+#show list the Movie, Serie, of TV-show
+#it has name, year and likes
+#Movie have duration
+#Series have season
 class Progroma():
     def __init__(self, nome, ano):
         self._nome = nome.title()
@@ -35,7 +39,7 @@ class Serie(Progroma):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-    def __str__(self):
+    def __str__(self):# magic method that textualize result how string
         return f'{programa.nome} - {programa.ano} - {programa.temporadas} Temporadas - {programa.likes}'
 
 class Playlist: 
@@ -43,7 +47,7 @@ class Playlist:
         self.nome = nome
         self._programas = programas
 
-    def __getitem__(self, item):
+    def __getitem__(self, item):# Dunder Methods knowing like magic - iterate the function 
         return self._programas[item]
     
     def __len__(self):
@@ -68,8 +72,9 @@ sete_vidas.dar_likes()
 
 filme_e_serie = [vingadores, atlanta, friends, sete_vidas]
 playlist_fim_de_semana = Playlist('Fim de semana', filme_e_serie)
+print(f'{playlist_fim_de_semana.nome}')
 print(f'Tamanho da lista: {len(playlist_fim_de_semana   )}')
 
-for programa in playlist_fim_de_semana:
+for programa in playlist_fim_de_semana: #exemple that Polymorphis,'in' need date be iterable
     print(programa)
 
